@@ -9,6 +9,7 @@
     display: flex
     flex-direction: column
     justify-content: center
+    align-items: end
     &.active
       .bio__click
         opacity: 0
@@ -16,27 +17,54 @@
   &__content
     position: relative
     z-index: 10
-    width: 100%
+    width: 60%
     display: flex
     flex-direction: column
     align-items: end
   &__name
     margin-bottom: 10px
-    font-size: 32px
-    color: white
+    font-size: 36px
+    color: $cream
     text-align: end
     transition: 1s
-  &__text
+  &__position
+    margin-bottom: 10px
     font-size: 20px
-    color: white
-  &__data
-    margin-bottom: 30px
-    font-size: 16px
+    letter-spacing: 1.5px
+    color: $white
+    opacity: .7
     text-align: end
+    font-style: italic
   &__experience
     margin-bottom: 30px
+    font-size: 20px
+    color: $white
+    opacity: .7
+    letter-spacing: 1.5px
+    font-style: italic
+  &__info
+    margin-bottom: 30px
+    max-width: 350px
+    width: 100%
+    color: $white
+    text-align: end
+    font-size: 18px
+    letter-spacing: 1px
+  &__text
+    margin-right: 20px
   &__about
-    margin-left: -25px
+    display: block
+    margin-bottom: 20px
+    font-size: 24px
+    color: $white
+  &__item
+    margin-left: 25px
+    color: $white
+    &:not(:last-child)
+      margin-bottom: 4px
+    span
+      font-size: 20px
+      color: $white
   &__right
     max-width: 43%
     width: 100%
@@ -68,24 +96,22 @@
   perspective: 500px
   transition: 1s transform 1.5s
   cursor: pointer
-  //&.active
-  //  z-index: 1000
-  //  transform: translate(190%,50%)
-  //  .side
-  //    -webkit-box-shadow: 0px 0px 10px 2px cornflowerblue
-  //    box-shadow: 0px 0px 10px 2px cornflowerblue
-  //  .front
-  //    transform: translateZ(50px)
-  //  .back
-  //    transform: rotateY(180deg) translateZ(50px)
-  //  .right
-  //    transform: rotateY(90deg) translateZ(50px)
-  //  .left
-  //    transform: rotateY(-90deg) translateZ(50px)
-  //  .top
-  //    transform: rotateX(90deg) translateZ(50px)
-  //  .bottom
-  //    transform: rotateX(-90deg) translateZ(50px)
+  &.active
+    .side
+      -webkit-box-shadow: 0px 0px 100px 18px moccasin
+      box-shadow: 0px 0px 100px 18px moccasin
+    .front
+      transform: translateZ(75px)
+    .back
+      transform: rotateY(180deg) translateZ(75px)
+    .right
+      transform: rotateY(90deg) translateZ(75px)
+    .left
+      transform: rotateY(-90deg) translateZ(75px)
+    .top
+      transform: rotateX(90deg) translateZ(75px)
+    .bottom
+      transform: rotateX(-90deg) translateZ(75px)
   &:hover
     .side
       -webkit-box-shadow: 0px 0px 100px 18px moccasin
@@ -123,25 +149,28 @@
 .cube__body
   width: inherit
   height: inherit
+  display: flex
+  align-items: center
+  justify-content: center
   transform-style: preserve-3d
   transition: 1s
   transform: rotateZ(45deg)
+  span
+    font-size: 24px
 .side
   position: absolute
   width: inherit
   height: inherit
   border: 4px solid moccasin
   background: rgba(255,255,255,.5)
-  -webkit-box-shadow: 0px 0px 100px 18px moccasin
-  box-shadow: 0px 0px 100px 18px moccasin
+  -webkit-box-shadow: 0px 0px 10px 4px cornflowerblue
+  box-shadow: 0px 0px 10px 4px cornflowerblue
   font: normal 70px Arial
   text-align: center
   line-height: 300px
   color: #fff
   transition: 1s
 .rotateY
-  width: 100%
-  height: 100%
   transform-style: preserve-3d
   transform-origin: center
   animation-name: cube
@@ -149,17 +178,17 @@
   animation-timing-function: linear
   animation-iteration-count: infinite
 .front
-  transform: translateZ(75px)
+  transform: translateZ(50px)
 .back
-  transform: rotateY(180deg) translateZ(75px)
+  transform: rotateY(180deg) translateZ(50px)
 .right
-  transform: rotateY(90deg) translateZ(75px)
+  transform: rotateY(90deg) translateZ(50px)
 .left
-  transform: rotateY(-90deg) translateZ(75px)
+  transform: rotateY(-90deg) translateZ(50px)
 .top
-  transform: rotateX(90deg) translateZ(75px)
+  transform: rotateX(90deg) translateZ(50px)
 .bottom
-  transform: rotateX(-90deg) translateZ(75px)
+  transform: rotateX(-90deg) translateZ(50px)
 
 @keyframes cube
   0%

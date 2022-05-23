@@ -32,5 +32,5 @@ const contentRight = document.querySelector('.bio__right')
 cubeBtn.addEventListener('click',function () {
     contentLeft.classList.add('active')
     contentRight.classList.add('active')
-    cubeBtn.classList.remove('active')
+    cubeBtn.classList.toggle('active')
 })
