@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Qibtiyah';
+    src: url('Qibtiyah.woff2') format('woff2'),
+        url('Qibtiyah.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

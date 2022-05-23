@@ -1,0 +1,38 @@
+.welcome
+  height: 0
+  opacity: 0
+  pointer-events: none
+  transition: 1s
+  transform: translateY(-100vh)
+  &.active
+    height: 100vh
+    opacity: 1
+    pointer-events: visible
+    transform: translateY(0)
+  &
+    .container
+      position: relative
+      display: flex
+      height: 100%
+  &__inner
+    position: relative
+    z-index: 1000
+    margin: auto
+    display: flex
+    flex-direction: column
+    align-items: start
+  &__title
+    font-size: 42px
+    span
+      color: moccasin
+  &__btn
+    display: block
+    margin-top: 20px
+    padding: 12px 15px
+    font-size: 20px
+    color: white
+    border: 1px solid #a27530
+    border-radius: 10px
+    transition: 1s
+    &:hover
+      background-color: #a27530
