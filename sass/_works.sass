@@ -1,0 +1,69 @@
+.work
+  padding: 80px 0
+  &__inner
+    display: flex
+    flex-direction: column
+  &__top
+    display: flex
+    flex-direction: column
+    align-items: center
+  &__title
+    margin-bottom: 30px
+    font-size: 60px
+    text-align: center
+  &__bottom
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr
+    grid-gap: 15px
+  &__item
+    position: relative
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    height: 200px
+    &:nth-child(5n+1)
+      grid-column: 1/3
+    &:nth-child(5n+2)
+      grid-column: 3/5
+    &:nth-child(5n+3)
+      grid-column: 5/7
+    &:nth-child(5n+4)
+      grid-column: 2/4
+    &:nth-child(5n+5)
+      grid-column: 4/6
+    &:hover
+      .work__image:after
+        background-color: rgba(0,0,0,.2)
+      .work__name
+        opacity: 0
+        transform: translateY(-50px)
+  &__image
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    z-index: -1
+    &:after
+      content: ''
+      width: 100%
+      height: 100%
+      position: absolute
+      left: 0
+      top: 0
+      background-color: rgba(0,0,0,.8)
+      transition: .5s background-color
+  &__photo
+    width: 100%
+    height: 100%
+    object-fit: cover
+  &__content
+    display: flex
+    flex-direction: column
+    align-items: center
+  &__name
+    opacity: 1
+    transition: .5s opacity,.5s transform
+    transform: translateY(0)
+    text-transform: uppercase
