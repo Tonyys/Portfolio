@@ -36,6 +36,6 @@ $mail->AltBody = '';
 if(!$mail->send()) {
     echo 'Error';
 } else {
-    header('location: thank-you.html');
+    echo '<script>alert("Welcome to Geeks for Geeks")</script>';
 }
 ?>
