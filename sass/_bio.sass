@@ -18,9 +18,9 @@
   &__day
     font-family: Qibtiyah,sans-serif
     font-size: 36px
-    background-image: url(../img/Bio/tg2.jpg)
-    background-position: 600px 744px
-    //background: linear-gradient(to bottom, #ff9966, #ff5e62)
+    //background-image: url(../img/Bio/tg2.jpg)
+    //background-position: 600px 744px
+    background: linear-gradient(to bottom, #ff9966, #ff5e62)
     -webkit-background-clip: text
     -webkit-text-fill-color: transparent
     z-index: 2
@@ -43,7 +43,6 @@
     font-size: 36px
     color: #ffc155
     text-align: end
-    transition: 1s
   &__position
     margin-bottom: 10px
     font-size: 20px
@@ -83,13 +82,14 @@
   &__right
     max-width: 43%
     width: 100%
-    &.active
+    perspective: 500px
+    &:hover
       .bio__photo
-        opacity: 1
-        transform: translate(0,0) scale(1)
-        pointer-events: visible
+        transform: rotateY(0)
   &__photo
     object-fit: cover
     width: 100%
     height: 100%
     border-radius: 10px
+    transition: .5s transform
+    transform: rotateY(-3deg)

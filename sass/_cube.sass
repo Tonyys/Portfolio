@@ -6,7 +6,6 @@
   width: 300px
   height: 300px
   perspective: 500px
-  transition: 1s transform 1.5s
   cursor: pointer
   &.active
     .side
@@ -56,7 +55,6 @@
     width: 100px
     height: 100px
     transform-style: preserve-3d
-    transition: 1s
     transform: rotateX(35deg)
   &__body
     width: inherit
@@ -65,7 +63,6 @@
     align-items: center
     justify-content: center
     transform-style: preserve-3d
-    transition: 1s
     transform: rotateZ(45deg)
     span
       font-size: 24px
@@ -82,7 +79,7 @@
   text-align: center
   line-height: 300px
   color: #fff
-  transition: 1s
+  transition: 1s transform, 1s box-shadow
 .rotateY
   transform-style: preserve-3d
   transform-origin: center
