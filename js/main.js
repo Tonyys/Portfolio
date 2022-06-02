@@ -28,3 +28,54 @@ cubeBtn.addEventListener('click',function () {
     contentLeft.classList.add('active')
     cubeBtn.classList.toggle('active')
 })
+
+// header link active
+const headerLinks = document.querySelectorAll('.header__link')
+const windowHeight = window.innerHeight * 0.50
+
+window.addEventListener('scroll',function (){
+    headerLinks.forEach(function (item){
+        let currentItem = item
+        let itemAttr = currentItem.getAttribute('data-scroll')
+        let currentSection = document.querySelector(itemAttr)
+        let currentSectionHeight = currentSection.offsetHeight
+        if (window.scrollY > currentSection.offsetTop - windowHeight && window.scrollY < currentSection.offsetTop + currentSectionHeight) {
+            headerLinks.forEach(function (item){
+                item.classList.remove('active')
+            })
+            currentItem.classList.add('active')
+        }
+    })
+})
+headerLinks.forEach(function (item){
+    let currentItem = item
+    let itemAttr = currentItem.getAttribute('data-scroll')
+    let currentSection = document.querySelector(itemAttr)
+    item.addEventListener('click',function (e){
+        e.preventDefault()
+        scrollTo(currentSection)
+    })
+})
+function scrollTo(element) {
+    window.scroll({
+        left: 0,
+        top: element.offsetTop,
+        behavior: 'smooth'
+    })
+}
+function throttle (func, ms) {
+    let locked = false
+    return function() {
+        if (locked) return
+
+        const context = this
+        const args = arguments
+
+        locked = true
+
+        setTimeout(() => {
+            func.apply(context, args)
+            locked = false
+        }, ms)
+    }
+}

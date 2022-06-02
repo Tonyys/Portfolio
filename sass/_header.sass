@@ -41,6 +41,11 @@
     transition: .3s color
     &:not(:last-child)
       margin-right: 55px
+    &.active
+      color: $cream
+      &:after
+        opacity: 1
+        transform: translateX(0)
     &:after
       content: ''
       position: absolute
