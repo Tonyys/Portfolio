@@ -4,6 +4,7 @@ const header = document.querySelector('.header')
 welcomeBtn.addEventListener('click',function (e) {
     e.preventDefault()
     document.querySelector('.welcome').classList.remove('active')
+    document.querySelector('.bio').style.opacity = '1'
     setTimeout(loadHeader,800)
     function loadHeader (){
         header.classList.remove('load')
@@ -63,19 +64,4 @@ function scrollTo(element) {
         behavior: 'smooth'
     })
 }
-function throttle (func, ms) {
-    let locked = false
-    return function() {
-        if (locked) return
 
-        const context = this
-        const args = arguments
-
-        locked = true
-
-        setTimeout(() => {
-            func.apply(context, args)
-            locked = false
-        }, ms)
-    }
-}
