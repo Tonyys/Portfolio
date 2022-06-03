@@ -25,6 +25,11 @@
     font-size: 42px
     span
       color: #cc7e30
+      background-image: url(../img/welcome/photo_2020-05-10_22-06-51.jpg)
+      background-position: 780px 880px
+      -webkit-background-clip: text
+      -webkit-text-fill-color: transparent
+      animation: text_bg 10s infinite alternate ease-in-out
   &__subtitle
     font-size: 24px
     color: white
@@ -39,3 +44,8 @@
     transition: 1s background-color
     &:hover
       background-color: #a27530
+@keyframes text_bg
+  from
+    background-position: 780px 880px
+  to
+    background-position: 780px 700px
