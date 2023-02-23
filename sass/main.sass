@@ -6,6 +6,7 @@
 @import "works"
 @import "welcome"
 @import "contact"
+@import "form&popup"
 @import "footer"
 
 *
@@ -19,8 +20,13 @@ body
   color: $white
   line-height: 1.3
   overflow: visible
+  @media (max-width: 320px)
+    min-width: 320px
   &.load
     overflow: hidden
+  &.overflow
+    @media (max-width: 425px)
+      overflow: hidden
 a
   text-decoration: none
   color: $white
@@ -34,14 +40,17 @@ textarea
   font-size: 16px
   color: $gray-light
   outline: none
+  @media (max-width: 425px)
+    font-size: 14px
   &::placeholder
     color: $gray
-
 .container
   max-width: 1440px
   width: 100%
   padding: 0 60px
   margin: 0 auto
+  @media (max-width: 600px)
+    padding: 0 40px
 .bg
   width: 100%
   height: 100%

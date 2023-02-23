@@ -23,6 +23,10 @@
     align-items: start
   &__title
     font-size: 42px
+    @media (max-width: 600px)
+      font-size: 38px
+    @media (max-width: 425px)
+      font-size: 26px
     span
       color: #cc7e30
       background-image: url(../img/welcome/photo_2020-05-10_22-06-51.jpg)
@@ -33,17 +37,79 @@
   &__subtitle
     font-size: 24px
     color: white
+    @media (max-width: 600px)
+      font-size: 20px
+    @media (max-width: 425px)
+      font-size: 16px
   &__btn
-    display: block
+    position: relative
+    display: flex
+    justify-content: space-between
+    align-items: center
     margin-top: 20px
-    padding: 12px 15px
+    font-size: 20px
+    border-radius: 10px
+    cursor: pointer
+    &:hover
+      .welcome__decore
+        clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0)
+      .welcome__arrow
+        animation-play-state: running
+      .welcome__btn-text
+        animation: text_rotate 200ms linear infinite
+  &__btn-text
+    margin-right: 15px
     font-size: 20px
     color: white
-    border: 2px solid #a27530
-    border-radius: 10px
-    transition: 1s background-color
-    &:hover
-      background-color: #a27530
+    transform-origin: center
+    @media (max-width: 600px)
+      font-size: 16px
+    @media (max-width: 320px)
+      font-size: 14px
+  &__decore
+    position: absolute
+    width: 250px
+    height: 40px
+    left: -30px
+    top: -5px
+    z-index: -1
+    clip-path: polygon(0 53%, 0 100%, 40% 100%, 0 100%)
+    transition: 1s clip-path
+    @media (max-width: 1024px)
+      clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0)
+    @media (max-width: 600px)
+      width: 230px
+    @media (max-width: 425px)
+      width: 210px
+    @media (max-width: 320px)
+      width: 190px
+  &__arrow
+    display: flex
+    align-items: center
+    justify-content: center
+    position: relative
+    animation: arrow 1000ms linear infinite
+    border: none
+    transform: translateY(0px)
+@keyframes arrow
+  0%
+    transform: translateY(0px)
+  50%
+    transform:  translateY(10px)
+  100%
+    transform: translateY(0px)
+
+@keyframes text_rotate
+  0%
+    transform: rotate(0deg)
+  25%
+    transform: rotate(2deg)
+  50%
+    transform: rotate(0deg)
+  75%
+    transform: rotate(-2deg)
+  100%
+    transform: rotate(0deg)
 @keyframes text_bg
   from
     background-position: 780px 880px
