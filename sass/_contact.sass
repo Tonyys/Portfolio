@@ -160,6 +160,7 @@
     align-items: center
     background-color: #252934
     border-radius: 10px
+    overflow: hidden
     opacity: 0
     transform: translateY(50%)
     transition: .5s opacity, .5s transform
@@ -170,6 +171,25 @@
     &.fade-on
       opacity: 1
       transform: translateY(0)
+    &:after
+      content: 'Sory,GitHub don`t support PHP :('
+      width: 100%
+      height: 100%
+      opacity: 0
+      background-color: black
+      position: absolute
+      top: 0
+      left: 0
+      z-index: 2
+      display: flex
+      align-items: center
+      justify-content: center
+      color: white
+      font-size: 32px
+      pointer-events: visible
+      transition: .5s opacity
+    &:hover:after
+      opacity: .5
   &__write
     margin-bottom: 30px
     display: block
