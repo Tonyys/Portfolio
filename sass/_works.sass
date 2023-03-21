@@ -47,6 +47,9 @@
     opacity: 0
     transform: translateY(50%)
     transition: .5s opacity, .5s transform
+    &:last-child
+      @media (max-width: 768px)
+        margin: 0 auto
     @media (max-width: 1200px)
       height: 150px
     @media (max-width: 768px)

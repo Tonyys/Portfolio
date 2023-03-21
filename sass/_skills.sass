@@ -117,6 +117,12 @@
       transition: .5s opacity .1s, .5s transform .1s
     &:nth-child(3)
       transition: .5s opacity .2s, .5s transform .2s
+    &:nth-child(4)
+      transition: .5s opacity .1s, .5s transform .1s
+    &:nth-child(5)
+      transition: .5s opacity .2s, .5s transform .2s
+    &:nth-child(6)
+      transition: .5s opacity .3s, .5s transform .3s
     &.fade-on
       opacity: 1
       transform: translateY(0)
@@ -160,10 +166,32 @@
       transition: .5s opacity .2s, .5s transform .2s
     &:nth-child(4)
       transition: .5s opacity .3s, .5s transform .3s
+      @media (max-width: 768px)
+        transition: .5s opacity, .5s transform
     &:nth-child(5)
       transition: .5s opacity .4s, .5s transform .4s
+      @media (max-width: 768px)
+        transition: .5s opacity .1s, .5s transform .1s
     &:nth-child(6)
+      transition: .5s opacity .1s, .5s transform .1s
+      @media (max-width: 768px)
+        transition: .5s opacity .2s, .5s transform .2s
+    &:nth-child(7)
+      transition: .5s opacity .2s, .5s transform .2s
+      @media (max-width: 768px)
+        transition: .5s opacity, .5s transform
+    &:nth-child(8)
+      transition: .5s opacity .3s, .5s transform .3s
+      @media (max-width: 768px)
+        transition: .5s opacity .1s, .5s transform .1s
+    &:nth-child(9)
+      transition: .5s opacity .4s, .5s transform .4s
+      @media (max-width: 768px)
+        transition: .5s opacity .2s, .5s transform .2s
+    &:nth-child(10)
       transition: .5s opacity .5s, .5s transform .5s
+      @media (max-width: 768px)
+        transition: .5s opacity, .5s transform
     &:last-child
       @media (max-width: 768px)
         grid-area: 4 / 2 / 5 / 3
